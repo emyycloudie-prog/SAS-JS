@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const qr = [
+  { name: "HTML et CSS", code: "C1" },
+  { name: "JavaScript de base", code: "C2" },
+  { name: "Programmation orientée objet", code: "C3" },
+  { name: "Git et GitHub", code: "C4" },
+  { name: "Bases de données SQL", code: "C5" },
+  { name: "Node.js et AP", code: "C6" },
+  { name: "Frameworks JS", code: "C7" },
+  { name: "Projet fil rouge", code: "C8" }
+]
+score = 0;
+let counter = 0;
+
+alert("Bienvenue ! Réponds avec le bon code (C1..C8). Clique Annuler pour quitter.");
+
+for (let i = 0; i < qr.length; i++) {
+  const q = qr[i];
+  const reponse = prompt("Quel est le code pour : " + q.name + " ?");
+
+  if (reponse === null) {
+    alert ("Fin du jeu ! Score final : " + score + " / " + counter);
+    break;
+  }
+
+  counter++;
+
+  if (reponse.toUpperCase() === q.code.toUpperCase()) {
+    score++;
+    alert ("✅ Correct ! " + q.name + " → " + q.code);
+  } else {
+    alert("❌ Faux ! La bonne réponse était : " + q.code);
+  }
+} 
+alert ("📊 Score actuel : " + score + " / " + counter);
+    </script>
+</body>
+</html>
